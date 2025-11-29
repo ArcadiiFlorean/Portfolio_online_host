@@ -17,7 +17,7 @@ import {
 
 // ⭐ ÎNLOCUIEȘTE cu cheia ta publică Stripe
 const stripePromise = loadStripe(
-  "pk_test_51SRdV7FjtsPvvag43Tkzc49nUkwcXqdZRCoolNFkVmeVTCVLU75kV3uRdBGmBUwZG1I4qsQEyLoxcmUhDfaOnkjm00J3g33nRu"
+  "pk_live_51SRdV7FjtsPvvag4XtAlQXpH4VInHK3yFTgt4BLMQCiVmd4nQmyZSOiuKBwLMmizae8FOq0vx3WjlFili1bfuPtS008K77nD7r"
 );
 
 // Componenta de formular de plată
@@ -140,7 +140,7 @@ function CheckoutPage() {
     const createPaymentIntent = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3001/create-payment-intent",
+          "https://arcadii-florean.onrender.com/create-payment-intent",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

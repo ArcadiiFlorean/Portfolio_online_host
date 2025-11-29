@@ -173,109 +173,115 @@ function HomePage() {
       ></div>
 
       <div className="relative z-10">
-       {/* Hero Section with Photo */}
-<section className="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-32 lg:pt-40 pb-10">
-  <div
-    ref={(el) => (sectionRefs.current["hero"] = el)}
-    className={`max-w-6xl mx-auto text-center transition-all duration-1000 ${
-      isVisible["hero"]
-        ? "opacity-100 translate-y-0"
-        : "opacity-0 translate-y-10"
-    }`}
-  >
-    {/* Photo First - Centered & Large */}
-    <div className="flex flex-col items-center mb-12">
-      <div className="relative w-72 h-72 lg:w-96 lg:h-96 mb-8">
-        {/* Photo Circle with Glow */}
-        <div className="w-full h-full rounded-full overflow-hidden border-4 border-red-500/30 shadow-[0_0_80px_rgba(239,68,68,0.6)] hover:shadow-[0_0_120px_rgba(239,68,68,0.8)] transition-all duration-500">
-          <img 
-            src="/Foto.jpg" 
-            alt="Arcadii Florean" 
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.parentElement.style.background = 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)';
-            }}
-          />
-        </div>
-        
-        {/* Decorative Ring */}
-        <div className="absolute inset-0 rounded-full border-2 border-red-500/20 animate-ping" style={{ animationDuration: '3s' }}></div>
-      </div>
-
-      {/* Name Below Photo - One Line */}
-      <h1 className="text-5xl lg:text-7xl xl:text-8xl font-light tracking-widest mb-4">
-        <span className="text-white">ARCADII </span>
-        <span className="text-red-400 font-semibold">FLOREAN</span>
-      </h1>
-
-      {/* Subtitle */}
-      <div className="text-center mb-8">
-        <span className="text-gray-400 text-sm uppercase tracking-widest">Web Designer & Developer</span>
-      </div>
-    </div>
-
-    {/* Skills Tags */}
-    <div className="flex flex-wrap justify-center gap-4 mb-8">
-      {["#Branding", "#UI/UX Design", "#Development", "#Animation"].map(
-        (tag, index) => (
-          <span
-            key={index}
-            className="text-sm text-gray-400 font-medium"
+        {/* Hero Section with Photo */}
+        <section className="min-h-screen flex items-center justify-center px-6 lg:px-8 pt-32 lg:pt-40 pb-10">
+          <div
+            ref={(el) => (sectionRefs.current["hero"] = el)}
+            className={`max-w-6xl mx-auto text-center transition-all duration-1000 ${
+              isVisible["hero"]
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
           >
-            {tag}
-          </span>
-        )
-      )}
-    </div>
+            {/* Photo First - Centered & Large */}
+            <div className="flex flex-col items-center mb-12">
+              <div className="relative w-72 h-72 lg:w-96 lg:h-96 mb-8">
+                {/* Photo Circle with Glow */}
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-red-500/30 shadow-[0_0_80px_rgba(239,68,68,0.6)] hover:shadow-[0_0_120px_rgba(239,68,68,0.8)] transition-all duration-500">
+                  <img
+                    src="/Foto.jpg"
+                    alt="Arcadii Florean"
+                    className="w-full h-full object-cover hover:brightness-110 transition-all duration-500"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentElement.style.background =
+                        "linear-gradient(135deg, #ef4444 0%, #f97316 100%)";
+                    }}
+                  />
+                </div>
 
-    {/* Social Badges */}
-    <div className="flex justify-center gap-3 mb-10">
-      <span className="text-sm text-gray-400 font-medium">
-        Available for Work
-      </span>
-      {[
-        { icon: Instagram, label: "IG" },
-        { icon: Twitter, label: "TW" },
-        { icon: Linkedin, label: "LN" },
-        { icon: Dribbble, label: "DB" },
-      ].map((social, index) => (
-        <div
-          key={index}
-          className="w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-red-500/20 hover:border-red-500 transition-all cursor-pointer"
-        >
-          <social.icon className="w-5 h-5 text-gray-400 hover:text-red-400" />
-        </div>
-      ))}
-    </div>
+                {/* Decorative Ring */}
+                <div
+                  className="absolute inset-0 rounded-full border-2 border-red-500/20 animate-ping"
+                  style={{ animationDuration: "3s" }}
+                ></div>
+              </div>
 
-    {/* Bio Text */}
-    <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-      Welcome to my portfolio! I'm{" "}
-      <span className="text-white font-semibold">Arcadii Florean</span>,
-      a passionate and innovative web designer and developer based in{" "}
-      <span className="text-red-400">United Kingdom</span>. With 09
-      years of experience in the industry, I specialize in creating
-      visually stunning and highly functional websites that provide an
-      exceptional user experience.
-    </p>
+              {/* Name Below Photo - One Line */}
+              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-light tracking-widest mb-4">
+                <span className="text-white">ARCADII </span>
+                <span className="text-red-400 font-semibold">FLOREAN</span>
+              </h1>
 
-    {/* CTA Buttons */}
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <Link to="/pricing">
-        <button className="px-10 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(239,68,68,0.8)] transition-all hover:scale-105 flex items-center justify-center gap-2 group">
-          <span>View Pricing</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
-      </Link>
-      <Link to="/contact">
-        <button className="px-10 py-4 bg-white/5 border-2 border-orange-500 text-orange-400 rounded-full font-bold text-lg hover:bg-orange-500/20 hover:shadow-[0_0_30px_rgba(251,146,60,0.5)] transition-all hover:scale-105">
-          Get Started
-        </button>
-      </Link>
-    </div>
-  </div>
-</section>
+              {/* Subtitle */}
+              <div className="text-center mb-8">
+                <span className="text-gray-400 text-sm uppercase tracking-widest">
+                  Web Designer & Developer
+                </span>
+              </div>
+            </div>
+
+            {/* Skills Tags */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {["#Branding", "#UI/UX Design", "#Development", "#Animation"].map(
+                (tag, index) => (
+                  <span
+                    key={index}
+                    className="text-sm text-gray-400 font-medium"
+                  >
+                    {tag}
+                  </span>
+                )
+              )}
+            </div>
+
+            {/* Social Badges */}
+            <div className="flex justify-center gap-3 mb-10">
+              <span className="text-sm text-gray-400 font-medium">
+                Available for Work
+              </span>
+              {[
+                { icon: Instagram, label: "IG" },
+                { icon: Twitter, label: "TW" },
+                { icon: Linkedin, label: "LN" },
+                { icon: Dribbble, label: "DB" },
+              ].map((social, index) => (
+                <div
+                  key={index}
+                  className="w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center hover:bg-red-500/20 hover:border-red-500 transition-all cursor-pointer"
+                >
+                  <social.icon className="w-5 h-5 text-gray-400 hover:text-red-400" />
+                </div>
+              ))}
+            </div>
+
+            {/* Bio Text */}
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+              Welcome to my portfolio! I'm{" "}
+              <span className="text-white font-semibold">Arcadii Florean</span>,
+              a passionate and innovative web designer and developer based in{" "}
+              <span className="text-red-400">United Kingdom</span>. With 09
+              years of experience in the industry, I specialize in creating
+              visually stunning and highly functional websites that provide an
+              exceptional user experience.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/pricing">
+                <button className="px-10 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(239,68,68,0.8)] transition-all hover:scale-105 flex items-center justify-center gap-2 group">
+                  <span>View Pricing</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="px-10 py-4 bg-white/5 border-2 border-orange-500 text-orange-400 rounded-full font-bold text-lg hover:bg-orange-500/20 hover:shadow-[0_0_30px_rgba(251,146,60,0.5)] transition-all hover:scale-105">
+                  Get Started
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
         {/* Services Section */}
         <section id="services" className="py-20 lg:py-32 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
